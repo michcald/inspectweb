@@ -1,0 +1,37 @@
+/* mein form css */
+
+form.mein-form {
+    margin: 10px;
+    padding: 10px;
+}
+
+div.mein-form-element {
+    padding-bottom: 20px;
+}
+
+div.mein-form-element-label {
+    
+}
+div.mein-form-element-input {
+    margin: 0px;
+    padding: 6px;
+}
+
+div.mein-form-element-required {
+    font-weight: bold;
+}
+
+div.mein-form-element-error {
+    list-style-type: none;
+    color: #f66868;
+    padding: 3px;
+}
+
+div.mein-form-element-description {
+    padding: 3px 0;
+    font-style: italic;
+}
+
+div.mein-form-element-separator {
+    
+}

@@ -1,0 +1,17 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">Themes</a>
+    >
+    <b>Add</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Theme added</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

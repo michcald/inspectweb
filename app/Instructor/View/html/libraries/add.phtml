@@ -1,0 +1,17 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries'))?>">Libraries</a>
+    >
+    <b>Add</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Library added</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

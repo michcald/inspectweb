@@ -1,0 +1,32 @@
+<p>
+    <b>Challenges</b>
+    >
+    <b>Libraries</b>
+</p>
+
+<?if(count($this->libraries) == 0):?>
+
+<p class="ko">No libraries</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?foreach($this->libraries as $l):?>
+    <tr>
+        <td><?=$l['name']?></td>
+        <td><?=nl2br($l['description'])?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries','a'=>'questions','id'=>$l['id']))?>">Questions</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries','a'=>'edit','id'=>$l['id']))?>">Edit</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries','a'=>'delete','id'=>$l['id']))?>">Delete</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

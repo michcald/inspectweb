@@ -1,0 +1,54 @@
+<p>
+    <b>Challenges</b>
+    >
+    <b>Environment</b>
+    >
+    <b>State</b>
+</p>
+
+<?if(count($this->prims) == 0):?>
+
+<p class="ko">The environment is empty</p>
+
+<p><a href="<?=$this->url(array('m'=>'instructor','c'=>'environment','a'=>'build'))?>">Build the environment</a></p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Part of the Environment</th>
+        <th></th>
+    </tr>
+    <?foreach($this->prims as $p):?>
+    <tr>
+        <td><?=$p->Name?></td>
+        <td><?=$p->Description?></td>
+        <td>
+            <?if($p->Name == 'API Browser'):?>Yes<?$destroyable = true;?><?else:?>No<?endif;?>
+        </td>
+        <td>
+            <?if($p->Name == 'API Browser'):?>
+            <a href="<?=$p->url?>" target="_blank">Preview</a>
+            <?endif;?>
+        </td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?if(isset($destroyable)):?>
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'environment','a'=>'destroy'))?>">
+        Destroy the environment
+    </a>
+</p>
+<?else:?>
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'environment','a'=>'build'))?>">
+        Build the environment
+    </a>
+</p>
+<?endif;?>
+
+<?endif;?>

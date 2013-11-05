@@ -1,0 +1,24 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges'))?>">Challenges</a>
+    >
+    <b>Delete</b>
+</p>
+
+<div class="info">   
+    <p><b>Challenge:</b> <?=$this->challenge['name']?></p>
+    <p><b>Theme:</b> <?=$this->challenge['theme']?></p>
+    <p><b>Start:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['start']))?></p>
+    <p><b>End:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['end']))?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Challenge deleted</p>
+
+<?else:?>
+
+<p class="ko">Do you really want to delete this challenge?</p>
+
+<?=$this->form?>
+
+<?endif;?>

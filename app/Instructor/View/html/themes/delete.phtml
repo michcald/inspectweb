@@ -1,0 +1,26 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">Themes</a>
+    >
+    <b>Delete</b>
+</p>
+
+<div class="info">
+    <p><b>Theme:</b> <?=$this->theme['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->theme['description'])?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Theme deleted</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to delete this theme? It will delete all of its steps and questions!
+</p>
+
+<?=$this->form?>
+
+<?endif;?>

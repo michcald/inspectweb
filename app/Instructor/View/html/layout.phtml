@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>INspect-Web</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" href="pub/css/reset.css" />
+        <link rel="stylesheet" href="pub/css/jquery-ui-1.9.1.custom.css" />
+        <link rel="stylesheet" href="pub/css/instructor/layout.css" />
+        <link rel="stylesheet" href="pub/css/instructor/input.css" />
+        <link rel="stylesheet" href="pub/css/instructor/form.css" />
+        <script type="text/javascript" src="pub/js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="pub/js/jquery-ui-1.9.1.custom.min.js"></script>
+        <script type="text/javascript" src="pub/js/jquery.jeditable.js"></script>
+        <script type="text/javascript" src="pub/js/instructor/init.js"></script>
+    </head>
+    <body>
+        <div id="header">
+            <?=$this->render('/header.phtml')?>
+        </div>
+        <div id="left">
+            <?=$this->render('/col.phtml')?>
+        </div>
+        <div id="content">
+            <?=$this->content?>
+        </div>
+    </body>
+</html>

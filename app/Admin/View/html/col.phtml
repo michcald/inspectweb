@@ -1,0 +1,20 @@
+<ul class="menu">
+    <li>
+        <a href="#">OpenSimulator</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'admin','c'=>'system','a'=>'start'))?>">Start</a></li>
+            <li><a href="<?=$this->url(array('m'=>'admin','c'=>'system','a'=>'stop'))?>">Stop</a></li>
+            <li><a href="<?=$this->url(array('m'=>'admin','c'=>'system','a'=>'reboot'))?>">Reboot</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'admin','c'=>'accounts'))?>">Accounts</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'admin','c'=>'accounts','a'=>'add'))?>">Add new</a></li>
+            <li><a href="<?=$this->url(array('m'=>'admin','c'=>'accounts'))?>">List</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'auth','a'=>'logout'))?>">Logout</a>
+    </li>
+</ul>

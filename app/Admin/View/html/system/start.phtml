@@ -1,0 +1,29 @@
+<p>
+    <b>OpenSimulator</b>
+    >
+    <b>Start</b>
+</p>
+
+<?if(!$this->form && !$this->error):?>
+
+<p class="ok">System started</p>
+
+<?else:?>
+
+<?if($this->error):?>
+<p class="ko">
+    <?=$this->error?>
+</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to start the system?<br />
+    The operation will have no effect if the system is already running!
+</p>
+
+<?=$this->form?>
+
+<?endif;?>
+
+<?endif;?>

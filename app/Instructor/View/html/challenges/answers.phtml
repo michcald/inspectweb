@@ -1,0 +1,70 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges'))?>">Challenges</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'steps','id'=>$this->challenge['id']))?>">Steps</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'questions','idstep'=>$this->step['id']))?>">Questions</a>
+    >
+    <b>Answers</b>
+</p>
+
+<div class="info">
+    <p><b>Challenge:</b> <?=$this->challenge['name']?></p>
+    <p><b>Theme:</b> <?=$this->challenge['theme']?></p>
+    <p><b>Start:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['start']))?></p>
+    <p><b>End:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['end']))?></p>
+</div>
+
+<div class="info">
+    <p><b>Step:</b> <?=$this->step['name']?></p>
+    <p><b>Index:</b> <?=$this->step['position']?></p>
+    <div style="clear: both"></div>
+</div>
+
+<div class="info">
+    <p><b>Question:</b> <?=nl2br($this->question['question'])?></p>
+    <div style="clear: both"></div>
+</div>
+
+<?if(count($this->answers) == 0):?>
+
+<p class="ko">No answers</p>
+
+<?else:?>
+
+<script type="text/javascript">
+    $(function() {
+        $(".score").change(function() {
+            $.post("index.php", {
+                "m": "instructor",
+                "c": "challenges",
+                "a": "set-score",
+                "id": $(this).attr("answer"),
+                "score": $(this).val()
+            });
+        });
+    });
+</script>
+
+<table>
+    <tr>
+        <th>Team</th>
+        <th>Answer</th>
+        <th></th>
+    </tr>
+    <?foreach($this->answers as $a):?>
+    <tr>
+        <td><?=$a['team']?></td>
+        <td><?=nl2br($a['answer'])?></td>
+        <td style="width: 200px">
+            <select class="score" answer="<?=$a['id']?>">
+                <option value="0"<?if($a['score']==0):?> selected="selected"<?endif?>>0 - Totally wrong</option>
+                <option value="1"<?if($a['score']==1):?> selected="selected"<?endif?>>1 - Good</option>
+                <option value="2"<?if($a['score']==2):?> selected="selected"<?endif?>>2 - Very good</option>
+            </select>
+        </td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

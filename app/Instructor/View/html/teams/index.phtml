@@ -1,0 +1,32 @@
+<p>
+    <b>Challenges</b>
+    >
+    <b>Teams</b>
+</p>
+
+<?if(count($this->teams) == 0):?>
+
+<p>No teams</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th># members</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?foreach($this->teams as $t):?>
+    <tr>
+        <td><?=$t['name']?></td>
+        <td><?=$t['members']?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'teams','a'=>'add-member','idteam'=>$t['id']))?>">Members</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'teams','a'=>'edit','id'=>$t['id']))?>">Edit</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'teams','a'=>'delete','id'=>$t['id']))?>">Delete</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

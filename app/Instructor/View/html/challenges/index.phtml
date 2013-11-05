@@ -1,0 +1,36 @@
+<p>
+    <b>Challenges</b>
+</p>
+
+<?if(count($this->challenges) == 0):?>
+
+<p class="ko">No challenges</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Theme</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?foreach($this->challenges as $c):?>
+    <tr>
+        <td><?=$c['name']?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['start']))?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['end']))?></td>
+        <td><?=$c['theme']?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'teams','id'=>$c['id']))?>">Teams</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'steps','id'=>$c['id']))?>">Steps</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'edit','id'=>$c['id']))?>">Edit</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'delete','id'=>$c['id']))?>">Delete</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

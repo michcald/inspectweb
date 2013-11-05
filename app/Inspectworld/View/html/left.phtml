@@ -1,0 +1,14 @@
+<p>
+    <b>Team:</b> <?=$this->team['name']?>
+</p>
+<p>
+    <b>Step <?=$this->step['position']?>:</b> <?=$this->step['name']?>
+</p>
+<div id="countdown"></div>
+<div>
+    <?if(file_exists("pub/img/challenges/steps/{$this->step['id']}.jpg")):?>
+    <img src="pub/img/challenges/steps/<?=$this->step['id']?>.jpg" width="100%" />
+    <?else:?>
+    <img src="http://static.guim.co.uk/sys-images/Media/Pix/pictures/2010/11/29/1291057574667/Gordon-Ramsay-007.jpg" width="100%" />
+    <?endif;?>
+</div>

@@ -1,0 +1,26 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'admin','c'=>'accounts'))?>">Accounts</a>
+    >
+    <b>Delete</b>
+</p>
+
+<div class="info">
+    <p><b>First name:</b> <?=$this->account->FirstName?></p>
+    <p><b>Last name:</b> <?=$this->account->LastName?></p>
+    <p><b>Email:</b> <?=$this->account->Email?></p>
+    <p><b>User Level:</b> <?=$this->account->UserLevel?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Account deleted</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to delete this account?
+</p>
+
+<?=$this->form?>
+
+<?endif;?>

@@ -1,0 +1,25 @@
+<?if(time() < strtotime($this->challenge['start'])):?>
+
+<p style="text-align: center;padding-top: 40px">
+    Waiting for the countdown to start the challenge!
+</p>
+
+<?else:?>
+
+<?foreach($this->questions as $q):?>
+<div class="question" id="question<?=$q['idanswer']?>" answer="<?=$q['idanswer']?>" step="<?=$this->step['id']?>" team="<?=$this->team['id']?>">
+    <h1>
+        <?=$q['position']?>. <?=$q['question']?>
+    </h1>
+    <div class="text">
+        <?if(time() < strtotime($this->challenge['end'])):?>
+        <p><?=nl2br($q['answer'])?></p>
+        <textarea style="display: none"><?=$q['answer']?></textarea>
+        <?else:?>
+        <?=nl2br($q['answer'])?>
+        <?endif;?>
+    </div>
+</div>
+<?endforeach;?>
+
+<?endif;?>

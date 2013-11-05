@@ -1,0 +1,29 @@
+<p>
+    <b>OpenSimulator</b>
+    >
+    <b>Reboot</b>
+</p>
+
+<?if(!$this->form && !$this->error):?>
+
+<p class="ok">System rebooted</p>
+
+<?else:?>
+
+<?if($this->error):?>
+<p class="ko">
+    <?=$this->error?>
+</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to reboot the system?<br />
+    If the system is not running it will be started!
+</p>
+
+<?=$this->form?>
+
+<?endif;?>
+
+<?endif;?>

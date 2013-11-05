@@ -1,0 +1,30 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries'))?>">Libraries</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries','a'=>'questions','id'=>$this->library['id']))?>">Questions</a>
+    >
+    <b>Edit</b>
+</p>
+
+<div class="info">
+    <p><b>Library:</b> <?=$this->library['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->library['description'])?></p>
+</div>
+
+<div class="info">
+    <p><b>Index:</b> <?=$this->question['position']?></p>
+    <p><b>Question:</b> <?=nl2br($this->question['question'])?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Question edited</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>
+

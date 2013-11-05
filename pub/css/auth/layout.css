@@ -1,0 +1,35 @@
+body {
+    font-family: Arial;
+    font-size: 14px;
+    color: #444444;
+}
+
+h1 {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+table {
+    margin: 20px auto;
+}
+table th {
+    padding: 10px;
+    text-align: right;
+}
+table td {
+    padding: 10px;
+}
+
+p {
+    text-align: center;
+    font-size: 12px;
+    font-style: italic;
+}
+p.ok {
+    color: #a1f39d;
+}
+p.ko {
+    color: #f66868;
+}

@@ -1,0 +1,27 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries'))?>">Libraries</a>
+    >
+    <b>Delete</b>
+</p>
+
+<div class="info">
+    <p><b>Library:</b> <?=$this->library['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->library['description'])?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Library deleted</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to delete this library? It will delete all of its questions!
+</p>
+
+<?=$this->form?>
+
+<?endif;?>
+

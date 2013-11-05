@@ -1,0 +1,26 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'teams'))?>">Teams</a>
+    >
+    <b>Delete</b>
+</p>
+
+<div class="info">
+    <p><b>Team:</b> <?=$this->team['name']?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Team deleted</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to delete this team?
+</p>
+
+<?=$this->form?>
+
+<?endif;?>
+

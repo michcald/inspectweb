@@ -1,0 +1,21 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'account'))?>">Account</a>
+    >
+    <b>Edit</b>
+</p>
+
+<div class="info">
+    <p><b>First name:</b> <?=$this->account->FirstName?></p>
+    <p><b>Last name:</b> <?=$this->account->LastName?></p>
+    <p><b>Email:</b> <?=$this->account->Email?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Account edited</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

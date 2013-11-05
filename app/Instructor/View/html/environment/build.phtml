@@ -1,0 +1,31 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'environment'))?>">Environment</a>
+    >
+    <b>Build</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Environment built</p>
+
+<?else:?>
+
+<?if($this->destroy):?>
+
+<p class="ko">You need to destroy the previous environment before</p>
+
+<p><a href="<?=$this->url(array('m'=>'instructor','c'=>'environment','a'=>'destroy'))?>">Destroy the environment</a></p>
+
+<?else:?>
+
+<?if($this->form == ''):?>
+<p class="ko">No future challenges founded</p>
+<?else:?>
+<?=$this->form?>
+<?endif;?>
+
+<?endif;?>
+
+<?endif;?>

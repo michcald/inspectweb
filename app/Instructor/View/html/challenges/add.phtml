@@ -1,0 +1,19 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges'))?>">Challenges</a>
+    >
+    <b>Add</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Challenge added</p>
+<p class="ko">
+    To create the challenge into INspect-World you need to build the environment!<br />
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'environment','a'=>'build'))?>">Click here</a> to create the environment!
+</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

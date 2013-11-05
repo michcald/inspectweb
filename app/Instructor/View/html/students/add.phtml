@@ -1,0 +1,15 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'students'))?>">Students</a>
+    >
+    <b>Add</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Student added</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

@@ -1,0 +1,15 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'admin','c'=>'accounts'))?>">Accounts</a>
+    >
+    <b>Add</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Account added<br />A mail has been sent to the inserted email address.</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

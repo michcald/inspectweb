@@ -1,0 +1,50 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">Themes</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'steps','id'=>$this->theme['id']))?>">Steps</a>
+    >
+    <b>Questions</b>
+</p>
+
+<div class="info">
+    <p><b>Theme:</b> <?=$this->theme['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->theme['description'])?></p>
+</div>
+
+<div class="info">
+    <?if(file_exists("pub/img/themes/steps/{$this->step['id']}.jpg")):?>
+    <img src="pub/img/themes/steps/<?=$this->step['id']?>.jpg" />
+    <?endif;?>
+    <p><b>Step:</b> <?=$this->step['name']?></p>
+    <p><b>Index:</b> <?=$this->step['position']?></p>
+    <div style="clear: both;"></div>
+</div>
+
+<p><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'add-question','idstep'=>$this->step['id']))?>">Add a question</a></p>
+
+<?if(count($this->questions) == 0):?>
+
+<p class="ko">No question</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Question</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?foreach($this->questions as $q):?>
+    <tr>
+        <td><?=$q['position']?></td>
+        <td><?=nl2br($q['question'])?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'edit-question','idquestion'=>$q['id']))?>">Edit</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'delete-question','idquestion'=>$q['id']))?>">Delete</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

@@ -1,0 +1,48 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges'))?>">Challenges</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'steps','id'=>$this->challenge['id']))?>">Steps</a>
+    >
+    <b>Questions</b>
+</p>
+
+<div class="info">   
+    <p><b>Challenge:</b> <?=$this->challenge['name']?></p>
+    <p><b>Theme:</b> <?=$this->challenge['theme']?></p>
+    <p><b>Start:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['start']))?></p>
+    <p><b>End:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['end']))?></p>
+</div>
+
+<div class="info">
+    <?if(file_exists("pub/img/challenges/steps/{$this->step['id']}.jpg")):?>
+    <a href="pub/img/challenges/steps/<?=$this->step['id']?>.jpg" target="_blank">
+        <img src="pub/img/challenges/steps/<?=$this->step['id']?>.jpg" height="100px" align="left" style="margin-right: 10px" />
+    </a>
+    <?endif;?> 
+    <p><b>Step:</b> <?=$this->step['name']?></p>
+    <p><b>Index:</b> <?=$this->step['position']?></p>
+    <div style="clear: both"></div>
+</div>
+
+<?if(count($this->questions) == 0):?>
+
+<p class="ko">No question</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Question</th>
+        <th></th>
+    </tr>
+    <?foreach($this->questions as $q):?>
+    <tr>
+        <td><?=$q['position']?></td>
+        <td><?=nl2br($q['question'])?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'answers','id'=>$q['id']))?>">Answers</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

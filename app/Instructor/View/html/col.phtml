@@ -1,0 +1,71 @@
+<ul class="menu">
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor','c'=>'account'))?>">Account</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'account'))?>">Info</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'account','a'=>'edit'))?>">Edit</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'account','a'=>'edit-password'))?>">Edit password</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'auth','a'=>'logout'))?>">Logout</a>
+    </li>
+</ul>
+<ul class="menu">
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor'))?>">Dashboard</a>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges'))?>">Challenges</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'add'))?>">Add new</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges'))?>">List</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor','c'=>'students'))?>">Students</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'students','a'=>'add'))?>">Add new</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'students'))?>">List</a></li>
+        </ul>
+    </li>
+</ul>
+
+<ul class="menu">
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries'))?>">Libraries</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries','a'=>'add'))?>">Add new</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries'))?>">List</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">Themes</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'add'))?>">Add new</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">List</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor','c'=>'teams'))?>">Teams</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'teams','a'=>'add'))?>">Add new</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'teams'))?>">List</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'instructor','c'=>'environment'))?>">Environment</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'environment'))?>">State</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'environment','a'=>'build'))?>">Build</a></li>
+            <li><a href="<?=$this->url(array('m'=>'instructor','c'=>'environment','a'=>'destroy'))?>">Destroy</a></li>
+        </ul>
+    </li>
+</ul>
+
+<h1>Users Online</h1>
+<div id="online">
+    <div style="text-align: center;">
+        <img src="pub/img/ajax-loader.gif" />
+    </div>
+</div>

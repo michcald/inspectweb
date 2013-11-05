@@ -1,0 +1,45 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges'))?>">Challenges</a>
+    >
+    <b>Steps</b>
+</p>
+
+<div class="info">
+    <p><b>Challenge:</b> <?=$this->challenge['name']?></p>
+    <p><b>Theme:</b> <?=$this->challenge['theme']?></p>
+    <p><b>Start:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['start']))?></p>
+    <p><b>End:</b> <?=date('m/d/Y, H:i:s', strtotime($this->challenge['end']))?></p>
+</div>
+
+<?if(count($this->steps) == 0):?>
+
+<p class="ko">No steps</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Img</th>
+        <th>Index</th>
+        <th>Name</th>
+        <th># questions</th>
+        <th></th>
+    </tr>
+    <?foreach($this->steps as $s):?>
+    <tr>
+        <td>
+            <?if(is_file("pub/img/challenges/steps/{$s['id']}.jpg")):?>
+            <img src="pub/img/challenges/steps/<?=$s['id']?>.jpg" />
+            <?else:?>
+            n/a
+            <?endif;?>
+        </td>
+        <td><?=$s['position']?></td>
+        <td><?=$s['name']?></td>
+        <td><?=nl2br($s['questions'])?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'challenges','a'=>'questions','idstep'=>$s['id']))?>">Questions</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

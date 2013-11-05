@@ -1,0 +1,29 @@
+<p>
+    <b>OpenSimulator</b>
+    >
+    <b>Stop</b>
+</p>
+
+<?if(!$this->form && !$this->error):?>
+
+<p class="ok">System stopped</p>
+
+<?else:?>
+
+<?if($this->error):?>
+<p class="ko">
+    <?=$this->error?>
+</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to stop the system?<br />
+    The operation will have no effect if the system is not running!
+</p>
+
+<?=$this->form?>
+
+<?endif;?>
+
+<?endif;?>

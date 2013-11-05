@@ -1,0 +1,9 @@
+<ul>
+    <?if(count($this->online) > 0):?>
+    <?foreach($this->online as $user):?>
+    <li><?=$user->FirstName?> <?=$user->LastName?></li>
+    <?endforeach;?>
+    <?else:?>
+    <li>No user</li>
+    <?endif;?>
+</ul>

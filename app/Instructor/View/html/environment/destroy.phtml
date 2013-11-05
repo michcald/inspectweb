@@ -1,0 +1,44 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'environment'))?>">Environment</a>
+    >
+    <b>Destroy</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Environment destroyed</p>
+
+<?else:?>
+
+<?if(count($this->prims) == 0):?>
+
+<p class="ko">The environment is empty</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Description</th>
+        <th>Part of the Environment</th>
+    </tr>
+    <?foreach($this->prims as $p):?>
+    <tr>
+        <td><?=$p->Name?></td>
+        <td><?=$p->Description?></td>
+        <td>
+            <?if($p->Name == 'API Browser'):?>Yes<?else:?>No<?endif;?>
+        </td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<p class="ko">Do you really want to destroy the environment?</p>
+
+<?=$this->form?>
+
+<?endif;?>
+
+<?endif;?>

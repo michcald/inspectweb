@@ -1,0 +1,151 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>INspect-Web</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" href="pub/css/reset.css" />
+        <link rel="stylesheet" href="pub/css/jquery-ui-1.9.1.custom.css" />
+        <script type="text/javascript" src="pub/js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="pub/js/inspectworld/kkcountdown.min.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                $("#countdown")
+                    .attr("time", "<?=strtotime($this->challenge['end'])?>")
+                    .kkcountdown({
+                        dayText: 'day ',
+                        daysText: 'days ',
+                        hoursText: 'h ',
+                        minutesText: 'm ',
+                        secondsText: 's',
+                        displayZeroDays: false,
+                        callback : function() {
+                            
+                        }
+                    });
+                
+                // handling the team progresses
+                questions = <?=$this->challenge['questions']?>;
+                t1_answers = <?=$this->teams[0]['answers']?>;
+                t2_answers = <?=$this->teams[1]['answers']?>;
+                $("#score1").css({
+                    width: $("#score1").parent().width()*t1_answers/questions+"px"
+                });
+                $("#score2").css({
+                    width: $("#score2").parent().width()*t2_answers/questions+"px"
+                });
+                
+                setInterval("location.href=location.href", 30000);
+            });
+        </script>
+        <style type="text/css">
+            html {
+                font-family: arial;
+                overflow-y: scroll;
+            }
+            h1 {
+                padding: 10px;
+                margin: 20px;
+                text-align: center;
+                font-size: 30px;
+                background-color: #f2f4f8;
+                border: 1px solid #dddddd;
+                font-weight: bold;
+            }
+            #header {
+                padding: 10px;
+                margin-bottom: 10px;
+                text-align: center;
+                font-size: 30px;
+                background-color: #f2f4f8;
+                border-bottom: 1px solid #dddddd;
+            }
+            #countdown {
+                padding: 10px;
+                margin: 10px;
+                font-family: courier;
+                text-align: center;
+                font-weight: bold;
+                font-size: 30px;
+                background-color: #ffdbd7;
+                border: 1px solid red;
+            }
+            #progress {
+                width: 90%;
+                margin: 50px auto;
+                font-size: 25px;
+            }
+            #progress td {
+                padding: 10px;
+            }
+            #progress #score1 {
+                height: 50px;
+                border-radius: 5px;
+                background-color: blue;
+                border: 1px solid blue;
+            }
+            #progress #score2 {
+                height: 50px;
+                border-radius: 5px;
+                background-color: red;
+                border: 1px solid red;
+            }
+            #score {
+                width: 30%;
+                margin: 50px auto;
+            }
+            #score th {
+                padding: 20px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 30px;
+            }
+            #score td {
+                padding: 20px;
+                text-align: center;
+                font-weight: bold;
+                font-size: 70px;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="header">
+            <b>Challenge:</b> <?=$this->challenge['name']?>
+        </div>
+        <div id="countdown"></div>
+        <h1>Team Progress</h1>
+        <table id="progress">
+            <tr>
+                <td style="width: 200px;text-align: right">
+                    <font color="blue"><?=$this->teams[0]['name']?></font><br />
+                    <?=$this->teams[0]['answers']?>/<?=$this->challenge['questions']?>
+                </td>
+                <td>
+                    <div id="score1"></div>
+                </td>
+            </tr>
+            <tr>
+                <td style="text-align: right">
+                    <font color="red"><?=$this->teams[1]['name']?></font><br />
+                    <?=$this->teams[1]['answers']?>/<?=$this->challenge['questions']?>
+                </td>
+                <td>
+                    <div id="score2"></div>
+                </td>
+            </tr>
+        </table>
+        <?if($this->teams[0]['score'] != 0 || $this->teams[0]['score'] != 0):?>
+        <h1>Team Score</h1>
+        <table id="score">
+            <tr>
+                <th><?=$this->teams[0]['name']?></th>
+                <th><?=$this->teams[1]['name']?></th>
+            </tr>
+            <tr>
+                <td><?=$this->teams[0]['score']?></td>
+                <td><?=$this->teams[1]['score']?></td>
+            </tr>
+        </table>
+        <?endif;?>
+    </body>
+</html>

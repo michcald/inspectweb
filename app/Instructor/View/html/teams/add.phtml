@@ -1,0 +1,17 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'teams'))?>">Teams</a>
+    >
+    <b>Add</b>
+</p>
+
+<?if(!$this->form):?>
+
+<p class="ok">Team added</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

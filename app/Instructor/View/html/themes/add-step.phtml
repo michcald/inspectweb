@@ -1,0 +1,24 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">Themes</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'steps','id'=>$this->theme['id']))?>">Steps</a>
+    >
+    <b>Add</b>
+</p>
+
+<div class="info">
+    <p><b>Theme:</b> <?=$this->theme['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->theme['description'])?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Step added</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

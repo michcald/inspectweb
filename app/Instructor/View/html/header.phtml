@@ -1,0 +1,15 @@
+<span class="title">INspect-Web</span>
+<span class="status" id="status">
+    <img src="pub/img/ajax-loader.gif" />
+</span>
+<span class="date"><?=date('m/d/Y, h:ia')?></span>
+<span class="account"><?=$this->auth()->FirstName?> <?=$this->auth()->LastName?> - <?=$this->auth()->Email?></span>
+<div style="clear: both"></div>
+
+<script type="text/javascript">
+    $(function() {
+        $.post("<?=$_SERVER['PHP_SELF']?>?m=instructor&a=status", {}, function(data) {
+            $("#status").html(data);
+        });
+    });
+</script>

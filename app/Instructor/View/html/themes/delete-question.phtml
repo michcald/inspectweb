@@ -1,0 +1,41 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">Themes</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'steps','id'=>$this->theme['id']))?>">Steps</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'questions','idstep'=>$this->step['id']))?>">Questions</a>
+    >
+    <b>Delete</b>
+</p>
+
+<div class="info">
+    <p><b>Theme:</b> <?=$this->theme['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->theme['description'])?></p>
+</div>
+
+<div class="info">
+    <p><b>Step:</b> <?=$this->step['name']?></p>
+    <p><b>Index:</b> <?=$this->step['position']?></p>
+    <div style="clear: both"></div>
+</div>
+
+<div class="info">
+    <p><b>Question:</b> <?=nl2br($this->question['question'])?></p>
+    <p><b>Index:</b> <?=$this->question['position']?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Question deleted</p>
+
+<?else:?>
+
+<p class="ko">
+    Do you really want to delete this question?
+</p>
+
+<?=$this->form?>
+
+<?endif;?>

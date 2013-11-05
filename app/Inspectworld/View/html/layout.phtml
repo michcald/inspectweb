@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+    <head>
+        <title>INspect-Web</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+        <link rel="stylesheet" href="pub/css/reset.css" />
+        <link rel="stylesheet" href="pub/css/jquery-ui-1.9.1.custom.css" />
+        <link rel="stylesheet" href="pub/css/inspectworld/layout.css" />
+        <link rel="stylesheet" href="pub/css/inspectworld/input.css" />
+        <script type="text/javascript" src="pub/js/jquery-1.8.2.min.js"></script>
+        <script type="text/javascript" src="pub/js/inspectworld/kkcountdown.min.js"></script>
+        <script type="text/javascript" src="pub/js/inspectworld/lib.js"></script>
+        <script type="text/javascript" src="pub/js/inspectworld/init.js"></script>
+        <script type="text/javascript">
+            $(function() {
+                initCountdown("<?=strtotime($this->challenge['start'])?>", "<?=strtotime($this->challenge['end'])?>");
+                init();
+            });
+        </script>
+    </head>
+    <body>
+        <div id="header">
+            <b>Challenge:</b> <?=$this->challenge['name']?>
+        </div>
+        <div id="left">
+            <?=$this->render('/left.phtml')?>
+        </div>
+        <div id="right">
+            <?=$this->render('right.phtml')?>
+        </div>
+    </body>
+</html>

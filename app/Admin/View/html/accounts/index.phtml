@@ -1,0 +1,43 @@
+<p>
+    <a href="<?=$this->url(array('m'=>'admin','c'=>'accounts'))?>">Accounts</a>
+    >
+    <b>List</b>
+</p>
+
+<?if(count($this->accounts) == 0):?>
+
+<p>No users</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>Email</th>
+        <th>User level</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?foreach($this->accounts as $s):?>
+    <tr>
+        <td><?=$s->FirstName?></td>
+        <td><?=$s->LastName?></td>
+        <td><?=$s->Email?></td>
+        <td>
+            <?if($s->UserLevel == 0):?>
+            Student
+            <?elseif($s->UserLevel == 100):?>
+            Instructor
+            <?else:?>
+            n/a
+            <?endif;?>
+            (<?=$s->UserLevel?>)
+        </td>
+        <td><a href="<?=$this->url(array('m'=>'admin','c'=>'accounts','a'=>'edit','id'=>$s->UUID))?>">Edit</a></td>
+        <td><a href="<?=$this->url(array('m'=>'admin','c'=>'accounts','a'=>'delete','id'=>$s->UUID))?>">Delete</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

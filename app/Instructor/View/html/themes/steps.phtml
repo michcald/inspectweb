@@ -1,0 +1,51 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'themes'))?>">Themes</a>
+    >
+    <b>Steps</b>
+</p>
+
+<div class="info">
+    <p><b>Theme:</b> <?=$this->theme['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->theme['description'])?></p>
+</div>
+
+<p><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'add-step','idtheme'=>$this->theme['id']))?>">Add a step</a></p>
+
+<?if(count($this->steps) == 0):?>
+
+<p class="ko">No steps</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Img</th>
+        <th>Index</th>
+        <th>Name</th>
+        <th># questions</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?foreach($this->steps as $s):?>
+    <tr>
+        <td>
+            <?if(is_file("pub/img/themes/steps/{$s['id']}.jpg")):?>
+            <img src="pub/img/themes/steps/<?=$s['id']?>.jpg" />
+            <?else:?>
+            n/a
+            <?endif;?>
+        </td>
+        <td><?=$s['position']?></td>
+        <td><?=$s['name']?></td>
+        <td><?=nl2br($s['questions'])?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'questions','idstep'=>$s['id']))?>">Questions</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'edit-step','idstep'=>$s['id']))?>">Edit</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'themes','a'=>'delete-step','idstep'=>$s['id']))?>">Delete</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

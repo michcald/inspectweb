@@ -1,0 +1,136 @@
+html {
+    font-family: arial;
+    font-size: 12px;
+    background-color: white;
+    overflow-y: auto;
+    min-width: 800px;
+}
+
+p {
+    padding: 5px 0;
+}
+
+p.loader {
+    padding: 20px;
+    text-align: center;
+}
+
+#header {
+    padding: 5px 15px;
+    font-size: 15px;
+    background-color: #eeeeee;
+    border: 1px solid #dddddd;
+}
+#header .title {
+    float: left;
+    font-weight: bold;
+    margin-right: 10px;
+}
+#header .status {
+    float: left;
+}
+#header .account {
+    float: right;
+    font-style: italic;
+    padding-right: 20px;
+}
+#header .date {
+    float: right;
+    font-style: italic;
+}
+
+#left {
+    float: left;
+    padding: 10px;
+    width: 150px;
+    font-size: 12px;
+}
+#left h1 {
+    padding: 10px 0;
+    font-weight: bold;
+    font-size: 15px;
+}
+#left ul {
+    margin-bottom: 10px;
+    width: 150px;
+}
+
+#content {
+    padding: 10px;
+    margin-left: 170px;
+}
+#content h1 {
+    padding: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    border-bottom: 1px solid #8a8c90;
+}
+#content h2 {
+    padding: 5px 10px;
+    margin: 0 10px 10px;
+    font-size: 13px;
+    font-weight: bold;
+    color: #444444;
+    border-bottom: 1px solid #8a8c90;
+}
+#content a,#content a:visited {
+    color: #3c57a3;
+    font-weight: bolder;
+}
+#content table {
+    width: 98%;
+    margin: 10px 10px 30px;
+    background-color: white;
+    border-radius: 4px;
+}
+#content table th {
+    padding: 5px;
+    text-align: left;
+    font-weight: bold;
+    color: #666666;
+    border-bottom: 1px solid #dddddd;
+    background-color: white;
+}
+#content table tr {
+    background-color: #f2f4f8;
+    border-bottom: 1px solid #dddddd;
+}
+#content table tr:hover {
+    background-color: orange;
+}
+#content table td {
+    padding: 5px;
+}
+#content table img {
+    height: 40px;
+    max-width: 40px;
+}
+#content ul {
+    margin: 20px;
+}
+#content ul li {
+    margin: 5px;
+}
+
+#content .info {
+    margin: 10px;
+    padding: 10px;
+    
+    background-color: #f2f4f8;
+    border: 1px solid #8a8c90;
+    border-radius: 4px;
+}
+
+#content .ok {
+    margin: 10px;
+    padding: 10px;
+    background-color: #e3ffd7;
+    font-weight: bold;
+}
+#content .ko {
+    margin: 10px;
+    padding: 10px;
+    background-color: #ffdbd7;
+    font-weight: bold;
+}

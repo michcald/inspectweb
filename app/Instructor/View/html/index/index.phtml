@@ -1,0 +1,47 @@
+<p>
+    <b>Dashboard</b>
+</p>
+
+<h2>Next Challenges</h2>
+<?if(count($this->nextchallenges) == 0):?>
+<p class="ko">No challenges</p>
+<?else:?>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Theme</th>
+    </tr>
+    <?foreach($this->nextchallenges as $c):?>
+    <tr>
+        <td><?=$c['name']?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['start']))?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['end']))?></td>
+        <td><?=$c['theme']?></td>
+    </tr>
+    <?endforeach;?>
+</table>
+<?endif;?>
+
+<h2>Last Challenges</h2>
+<?if(count($this->lastchallenges) == 0):?>
+<p class="ko">No challenges</p>
+<?else:?>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Theme</th>
+    </tr>
+    <?foreach($this->lastchallenges as $c):?>
+    <tr>
+        <td><?=$c['name']?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['start']))?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['end']))?></td>
+        <td><?=$c['theme']?></td>
+    </tr>
+    <?endforeach;?>
+</table>
+<?endif;?>

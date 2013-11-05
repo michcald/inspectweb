@@ -1,0 +1,27 @@
+<p>
+    <b>Dashboard</b>
+</p>
+
+<h2>My Challenges</h2>
+<?if(count($this->challenges) == 0):?>
+<p class="ko">No challenges</p>
+<?else:?>
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Start</th>
+        <th>End</th>
+        <th>Theme</th>
+        <th>Score</th>
+    </tr>
+    <?foreach($this->challenges as $c):?>
+    <tr>
+        <td><?=$c['name']?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['start']))?></td>
+        <td><?=date('d/m/Y, H:i', strtotime($c['end']))?></td>
+        <td><?=$c['theme']?></td>
+        <td><?=$c['score']?></td>
+    </tr>
+    <?endforeach;?>
+</table>
+<?endif;?>

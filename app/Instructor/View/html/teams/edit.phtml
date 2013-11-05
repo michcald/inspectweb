@@ -1,0 +1,21 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'teams'))?>">Teams</a>
+    >
+    <b>Edit</b>
+</p>
+
+<div class="info">
+    <p><b>Team:</b> <?=$this->team['name']?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Team edited</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

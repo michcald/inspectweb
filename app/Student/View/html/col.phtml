@@ -1,0 +1,16 @@
+<ul class="menu">
+    <li>
+        <a href="<?=$this->url(array('m'=>'student'))?>">Dashboard</a>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'student','c'=>'account'))?>">Account</a>
+        <ul>
+            <li><a href="<?=$this->url(array('m'=>'student','c'=>'account'))?>">Info</a></li>
+            <li><a href="<?=$this->url(array('m'=>'student','c'=>'account','a'=>'edit'))?>">Edit</a></li>
+            <li><a href="<?=$this->url(array('m'=>'student','c'=>'account','a'=>'edit-password'))?>">Edit password</a></li>
+        </ul>
+    </li>
+    <li>
+        <a href="<?=$this->url(array('m'=>'auth','a'=>'logout'))?>">Logout</a>
+    </li>
+</ul>

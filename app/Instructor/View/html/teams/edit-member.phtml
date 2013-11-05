@@ -1,0 +1,29 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'teams'))?>">Teams</a>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'teams','a'=>'add-member','idteam'=>$this->team['id']))?>">Members</a>
+    >
+    <b>Edit</b>
+</p>
+
+<div class="info">
+    <p><b>Team:</b> <?=$this->team['name']?></p>
+</div>
+
+<div class="info">
+    <p><b>Member:</b> <?=$this->member->FirstName?> <?=$this->member->LastName?></p>
+    <p><b>Email:</b> <?=$this->member->Email?></p>
+    <p><b>Current role:</b> <?=$this->member->role?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Member edited</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>

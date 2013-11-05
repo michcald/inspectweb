@@ -1,0 +1,39 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries'))?>">Libraries</a>
+    >
+    <b>Questions</b>
+</p>
+
+<div class="info">
+    <p><b>Library:</b> <?=$this->library['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->library['description'])?></p>
+</div>
+
+<?=$this->form?>
+
+<?if(count($this->questions) == 0):?>
+
+<p class="ko">No questions</p>
+
+<?else:?>
+
+<table>
+    <tr>
+        <th>Index</th>
+        <th>Questions</th>
+        <th></th>
+        <th></th>
+    </tr>
+    <?foreach($this->questions as $q):?>
+    <tr>
+        <td><?=$q['position']?></td>
+        <td><?=nl2br($q['question'])?></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries','a'=>'edit-question','id'=>$q['id']))?>">Edit</a></td>
+        <td><a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries','a'=>'delete-question','id'=>$q['id']))?>">Delete</a></td>
+    </tr>
+    <?endforeach;?>
+</table>
+
+<?endif;?>

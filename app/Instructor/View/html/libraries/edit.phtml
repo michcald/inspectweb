@@ -1,0 +1,22 @@
+<p>
+    <b>Challenges</b>
+    >
+    <a href="<?=$this->url(array('m'=>'instructor','c'=>'libraries'))?>">Libraries</a>
+    >
+    <b>Edit</b>
+</p>
+
+<div class="info">
+    <p><b>Library:</b> <?=$this->library['name']?></p>
+    <p><b>Description:</b> <?=nl2br($this->library['description'])?></p>
+</div>
+
+<?if(!$this->form):?>
+
+<p class="ok">Library edited</p>
+
+<?else:?>
+
+<?=$this->form?>
+
+<?endif;?>
